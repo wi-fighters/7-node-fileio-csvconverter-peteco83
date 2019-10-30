@@ -4,7 +4,7 @@ Create a program that converts [CSV](https://en.wikipedia.org/wiki/Comma-separat
 
 ## Constraints
 
-* The program should accept one or two arguments. If no Arguments are passed, the program should exir the process and print a message to the user (see examples).
+* The program should accept one or two arguments. If no arguments are passed, the program should exit the process and print a message to the user (see examples).
 
 * If only one argument is passed, the program should convert the file in that path to a json file in the same directory.
 
