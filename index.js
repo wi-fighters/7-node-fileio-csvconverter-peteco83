@@ -13,8 +13,9 @@ const converter = (fromfile, tofile) => {
             .then((jsonObj) => {
                 fs.writeFileSync(__dirname + `/${tofile}`, JSON.stringify(jsonObj))
                 console.log(`JSON file saved at: ${tofile}`)
-            .catch(err => console.log(`Something went wrong, Could not write json to: ${tofile}`))
+            
             })
+            .catch(err => console.error(`Something went wrong, Could not write json to: ${tofile}`))
     } else if (fromfile && !tofile) {
         csv()   
         .fromFile(path.resolve(__dirname, csvFilePath))
@@ -24,7 +25,7 @@ const converter = (fromfile, tofile) => {
         })
 
     } else if (!fromfile && !tofile) {
-        console.log("Please provide a csv file to convet to JSON")
+        console.error("Please provide a csv file to convert to JSON")
         process.exit
     } 
 
