@@ -13,6 +13,7 @@ const converter = (fromfile, tofile) => {
             .then((jsonObj) => {
                 fs.writeFileSync(__dirname + `/${tofile}`, JSON.stringify(jsonObj))
                 console.log(`JSON file saved at: ${tofile}`)
+            .catch(err => console.log(`Something went wrong, Could not write json to: ${tofile}`))
             })
     } else if (fromfile && !tofile) {
         csv()   
